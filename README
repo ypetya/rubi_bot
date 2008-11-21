@@ -1,0 +1,17 @@
+== Rubi_bot
+
+Requirements:
+
+SkypeR by Akimichi Tatsukawa
+
+SkypeR/README.txt
+
+=== Gems:
+
+ * readline
+ * optparse
+ * fileutils
+ * yaml
+ * dbus
+ * rbus
+ * skyper
