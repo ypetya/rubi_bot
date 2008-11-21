@@ -1,15 +1,17 @@
 == Rubi_bot
 
-Requirements:
+=== Requirements:
 
-memcached, default settings
-data folder
+ * dbus
+ * memcached, default settings - (optional)
+ * skype-client (2.0.0.72)
+ * data folder
 
-SkypeR by Akimichi Tatsukawa
+SkypeR gem by Akimichi Tatsukawa
 
 SkypeR/README.txt
 
-=== Gems:
+==== Gems:
 
  * readline
  * optparse
