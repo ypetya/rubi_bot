@@ -1,0 +1,16 @@
+Illesztési algoritmus:
+
+ * szótőkeresés dictonary file alapján a legjobban illő szavakkal 
+(a legjobb eredményt kapó üzenetbejegyzést feltételezzük)
+
+ * ha nem túl pontos a találat, kérdés keresés: chat határ figyelésével, 
+folymatosan távolodva a legjobb találattól,[mondat darabolással(jó e? ez külön témakör)].
+
+ * az üzenet objektumokban letárolni a dictonary file alapján történt illesztő heurisztika fv
+eedményét
+
+ * az összes üzenet közül legjobb találatok közül random válasszon.
+
+ * ocamorph szótövesítő használata
+
+apt-get install ihungarian
