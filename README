@@ -1,22 +1,98 @@
-== Rubi_bot
+= Rubi_bot
 
-=== Requirements:
+= Requirements
+
+For details check the originalSkypeR gem by Akimichi Tatsukawa:
+ * SkypeR/README.txt
+
+== Additional Requirements:
 
  * dbus
  * memcached, default settings - (optional)
  * skype-client (2.0.0.72)
  * data folder
 
-SkypeR gem by Akimichi Tatsukawa
-
-SkypeR/README.txt
-
-==== Gems:
+=== Gems
 
  * readline
  * optparse
  * fileutils
  * yaml
  * dbus
- * rbus
  * skyper
+
+== Preresquites and install
+
+THIS IS THE ORIGINAL README BY Akimichi Tatsukawa - SkypeR:
+
+= Requirements
+
+* Skype for Linux
+* RBus
+  For more infomation, please refer to http://rbus.rubyforge.org/
+* uuidtools
+* yaparc
+
+= Install & Preparation
+
+Install Skype for Debian.
+
+Install the following packages via apt.
+
+ii  dbus                  1.0.2-1               simple interprocess messaging system
+ii  dbus-1-doc            1.0.2-1               simple interprocess messaging system (documentation)
+ii  dbus-1-utils          1.0.2-1               simple interprocess messaging system (utilities)
+ii  libdbus-1-3           1.0.2-1               simple interprocess messaging system
+ii  libdbus-1-dev         1.0.2-1               simple interprocess messaging system (development headers)
+ii  libdbus-glib-1-2      0.71-3                simple interprocess messaging system (GLib-based shared li
+ii  libdbus-glib-1-dev    0.71-3                simple interprocess messaging system (GLib interface)
+ii  libdbus-qt-1-1c2      0.62.git.20060814-2   simple interprocess messaging system (Qt-based shared libr
+ii  libdbus-qt-1-dev      0.62.git.20060814-2   simple interprocess messaging system (Qt interface)
+
+Install RBus via gem.
+
+ # gem install rbus
+
+Invoke skype with dbus messaging enabled.
+
+ # skype --enable-dbus --use-session-dbus &
+
+= Usage
+
+== iskype
+
+Be sure to invoke skype with with dbus messaging enabled.
+And then, run iskype.rb with application name.
+
+ $ ruby iskype.rb -n application_name
+ Skype> GET USER my_skype_account FULLNAME
+ Skype> GET USER somebodys_account BUDDYSTATUS
+ Skype> SEARCH FRIENDS
+ Skype> GET USERSTATUS
+ OK
+ PROTOCOL 5
+ USERSTATUS ONLINE
+ Skype> GET USER somebodys_account ONLINESTATUS
+ OK
+ PROTOCOL 5
+ USER somebodys_account ONLINESTATUS OFFLINE
+
+ Skype> GET USER somebodys_account LASTONLINETIMESTAMP
+
+ Skype> exit
+ See you again.
+
+With -p option, iskype parses input command before execution. The parser is still rudimentary.
+
+ $ ruby iskype.rb -p
+ Skype> blah, blah
+ => Parse Error
+ Skype> SEARCH FRIENDS
+ OK
+ PROTOCOL 5
+ => USERS echo123, foo, bar
+
+
+Have fun!!
+
+Akimichi Tatsukawa
